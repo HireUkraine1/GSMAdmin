@@ -43,7 +43,7 @@ class Steps extends \AcceptanceTester
 
 
             $I->waitAndScreen('p'.rand(1,1000).'df'.$p.'.png');
-            //$I->waitForElement('/*[@class="textLayer"]/xhtml:div');
+            $I->waitForElement('/*[@class="textLayer"]/xhtml:div');
             self::pagesToPdf();
         }
         $I->click('a#generatePdf');

@@ -26,9 +26,12 @@ class Steps extends \AcceptanceTester
     public function checkSelectionForPdf ()
     {
         $I = $this;
+
+        self::pagesToPdf();
+
         $selectPdf = count($I->grabMultiple('//select[@id ="pdfs"]/option'));
 
-        for ($p = 28; $p <= 28; $p++) {
+        for ($p = 2; $p <= $selectPdf; $p++) {
             $I->click('//select[@id ="pdfs"]/option[' . $p . ']');
 
 
@@ -37,8 +40,10 @@ class Steps extends \AcceptanceTester
                 $last_window = end($handles);
                 $webdriver->switchTo()->window($last_window);
             });
-            
-            $I->waitAndScreen('pdf'.$p.'.png');
+
+
+            $I->waitAndScreen('p'.rand(1,1000).'df'.$p.'.png');
+            //$I->waitForElement('/*[@class="textLayer"]/xhtml:div');
             self::pagesToPdf();
         }
         $I->click('a#generatePdf');
@@ -49,7 +54,9 @@ class Steps extends \AcceptanceTester
             $webdriver->switchTo()->window($last_window);
         });
 
+
         $I->waitAndScreen('pdf'.$p.'.png');
+        //$I->waitForElement('/*[@class="textLayer"]/xhtml:div');
         $I->switchToWindow();
 
 

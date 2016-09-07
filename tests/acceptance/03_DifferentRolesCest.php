@@ -27,8 +27,7 @@ class DifferentRolesCest
         $role->gsmeditor();
         $role->logout();
     }
-
-
+    
     function roleAdmin( \Page\DifferentRoles $role, \Step\Acceptance\Steps $I)
     {
         $role->roleUsers('gsmadmin@gustr.com');

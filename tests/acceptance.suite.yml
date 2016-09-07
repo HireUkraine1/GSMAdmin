@@ -8,10 +8,10 @@ modules:
     config:
         WebDriver:
             url: 'https://sdadminpanel-staging001.elasticbeanstalk.com'
-            restart: false
+            restart: true
             browser: chrome
             window_size: 1980x1780
-            clear_cookies: false
+            clear_cookies: true
 
 env:
 

@@ -5,7 +5,6 @@ use \Step\Functional;
  */
 class WebApiJsonCest
 {
-
     public function checkValidationJsonSdsDetail(\Step\Functional\Steps $I){
         $I->apiSdsData();
     }

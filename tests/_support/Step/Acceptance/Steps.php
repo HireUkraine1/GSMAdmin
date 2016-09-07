@@ -39,10 +39,9 @@ class Steps extends \AcceptanceTester
             });
             
             $I->waitAndScreen('pdf'.$p.'.png');
-            $I->switchToWindow();
             self::pagesToPdf();
         }
-        $I->click('//select[@id ="pdfs"]/option[1]');
+        $I->click('a#generatePdf');
 
         $I->executeInSelenium(function (\Facebook\WebDriver\Remote\RemoteWebDriver $webdriver) {
             $handles = $webdriver->getWindowHandles();

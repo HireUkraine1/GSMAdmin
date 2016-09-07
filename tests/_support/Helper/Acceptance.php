@@ -99,6 +99,7 @@ class Acceptance extends \Codeception\Module
         $I = $this->getModule('WebDriver');
         $I->wait(2);
         $I->makeScreenshot($img);
+        $I->switchToWindow();
     }
 
 

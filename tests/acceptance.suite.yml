@@ -7,30 +7,19 @@ modules:
 
     config:
         WebDriver:
-            url: 'https://sdadminpanel-staging001.elasticbeanstalk.com'
-            restart: true
+            url: 'http://sdadminpanel-staging001.elasticbeanstalk.com'
+
             browser: chrome
             window_size: 1980x1780
-            clear_cookies: true
+            restart: true
 
 env:
 
-PhantomJs:
-   modules:
-    config:
-      enabled:
+  firefox:
+    modules:
+      config:
         WebDriver:
-          url: 'https://sdadminpanel-staging001.elasticbeanstalk.com'
-          browser: phantomjs
-
-
-
-
-
-
-
-
-
-
-
-
+          url: 'http://sdadminpanel-staging001.elasticbeanstalk.com/'
+          restart: false
+          browser: firefox
+          window_size: 1980x1780

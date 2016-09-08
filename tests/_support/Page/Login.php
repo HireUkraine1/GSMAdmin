@@ -30,10 +30,12 @@ class Login
         $I = $this->tester;
         $I->amOnPage(self::$URL);
         $I->click(self::$clickLogIn);
+        /*
         $I->waitForElement(self::$error);
         $I->see('Login Email cannot be blank.',self::$error);
         $I->see('Password cannot be blank.',self::$error);
-    }
+    */
+        }
 
     public function loginWrongEmail($email)
     {
